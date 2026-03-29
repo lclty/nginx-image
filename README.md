@@ -45,7 +45,8 @@
 #### 0.下载镜像
 如果你已经安装 [git](https://git-scm.com/)，那么可以直接克隆本仓库到本地：
 ```bash
-git clone https://github.com/lclty/nginx-image && cd ./nginx-image
+git clone https://github.com/lclty/nginx-image 
+cd ./nginx-image
 ```
 如果你还没有安装 [git](https://git-scm.com/)，那么你可以点击右上角绿色的 `<> Code`，然后点击 `Download ZIP`，并在本地使用压缩工具解压缩压缩包。
 #### 1.导入镜像
@@ -100,7 +101,7 @@ nano ./Dockerfile
 docker build -t nginx-build -f Dockerfile .
 ```
 (P.S. 作者本人编译了3546.3秒)
-![BuildTime](build-1.png)
+![BuildTime](build.png)
 
 #### 3. 提取核心文件
 利用生成的编译镜像，将核心的可执行文件和配置文件提取至宿主机，提取后及时删除编译镜像：
