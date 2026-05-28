@@ -42,15 +42,14 @@
 本镜像支持“直接拉取使用”与“自行编译构建”两种方式。无论采用哪种方式，请确保你已经在设备上安装[Docker](https://www.docker.com/).
 
 ### 方案 A：直接拉取 NGINX Docker 镜像
-#### 0.下载镜像
-如果你已经安装 [git](https://git-scm.com/)，那么可以直接克隆本仓库到本地：
+#### 1.获取镜像
+
+你可以直接从 Docker Hub 拉取：
 ```bash
-git clone https://github.com/lclty/nginx-image 
-cd ./nginx-image
-```
-如果你还没有安装 [git](https://git-scm.com/)，那么你可以点击右上角绿色的 `<> Code`，然后点击 `Download ZIP`，并在本地使用压缩工具解压缩压缩包。
-#### 1.导入镜像
-将镜像包载入 Docker：
+docker pull lclty/nginx:latest
+````
+
+你也可以从 [Releases](https://github.com/lclty/nginx-image/releases) 下载镜像，然后将镜像包载入 Docker：
 ```bash
 docker load -i nginx.tar
 ```
@@ -100,8 +99,6 @@ nano ./Dockerfile
 ```bash
 docker build -t nginx-build -f Dockerfile .
 ```
-(P.S. 作者本人编译了3546.3秒)
-![BuildTime](build.png)
 
 #### 3. 提取核心文件
 利用生成的编译镜像，将核心的可执行文件和配置文件提取至宿主机，提取后及时删除编译镜像：
